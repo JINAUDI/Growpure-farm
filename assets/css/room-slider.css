@@ -1,0 +1,83 @@
+/* ══════════════════════════════════════════
+   Royal Stays — Dual Image Vertical Animation
+   Works WITHIN the existing cs_single_room_slider_1
+   ══════════════════════════════════════════ */
+
+/* Dual image container inside each main slide */
+.rs-dual-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 200%;
+    transition: transform 0.8s ease-in-out;
+    will-change: transform;
+    z-index: 0;
+}
+
+.rs-dual-wrap.show-second {
+    transform: translateY(-50%);
+}
+
+.rs-dual-wrap .rs-img {
+    display: block;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Make existing slide container clip overflow */
+.cs_single_room_thumbnail {
+    overflow: hidden;
+}
+
+/* Toggle dots — bottom-right of each main slide */
+.rs-img-dots {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rs-img-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    border: 1.5px solid rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rs-img-dot.active {
+    background: #CBA35C;
+    border-color: #CBA35C;
+    transform: scale(1.3);
+}
+
+/* Thumbnail nav expansion for 6 items */
+.cs_single_room_nav_1.cs_type_1 {
+    display: flex;
+    gap: 4px;
+}
+
+.cs_single_room_nav_1.cs_type_1 .cs_single_room_thumb_mini {
+    flex: 1;
+    cursor: pointer;
+}
+
+.cs_single_room_nav_1.cs_type_1 .cs_single_room_thumb_mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 575px) {
+    .rs-img-dots {
+        bottom: 16px;
+        right: 16px;
+    }
+}

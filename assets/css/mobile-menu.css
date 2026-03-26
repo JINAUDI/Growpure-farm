@@ -1,0 +1,361 @@
+/* ==========================================================================
+   MOBILE BOTTOM MENU — Premium Luxury Edition
+   Dark forest-green (#343935) with gold accent.
+   Shows only on ≤768px. Desktop completely untouched.
+   ========================================================================== */
+
+/* ── Hide on desktop ──────────────────────────────────────────── */
+.mob-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* ── Hide existing hamburger on mobile ──────────────────────── */
+    .cs_site_header.cs_style_1 .cs_menu_toggle {
+        display: none !important;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+     BOTTOM MENU COMPONENT
+     ══════════════════════════════════════════════════════════════ */
+
+    .mob-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        inline-size: 100%;
+        z-index: 9998;
+        pointer-events: none;
+    }
+
+    /* ── Overlay container (holds nav list) ─────────────────────── */
+    .mob-menu__container {
+        box-sizing: border-box;
+        inline-size: 100%;
+        block-size: 0;
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        transition: opacity 0.2s ease-out;
+        pointer-events: none;
+    }
+
+    /* ── Nav list ───────────────────────────────────────────────── */
+    .mob-menu__list {
+        box-sizing: border-box;
+        display: none;
+        inline-size: 100%;
+        max-inline-size: 320px;
+        padding: 0 2rem;
+        margin: 0;
+        list-style: none;
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        text-align: center;
+    }
+
+    /* ── Decorative gold line above nav ─────────────────────────── */
+    .mob-menu__list::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+        margin: 0 auto 2rem;
+    }
+
+    .mob-menu__list li {
+        border-bottom: none;
+        position: relative;
+    }
+
+    .mob-menu__list li+li {
+        margin-top: 0.25rem;
+    }
+
+    .mob-menu__list a {
+        display: inline-block;
+        padding: 0.85rem 0.5rem;
+        color: rgba(235, 236, 239, 0.75);
+        text-decoration: none;
+        font-size: 1.35rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        position: relative;
+        transition: color 0.35s ease, letter-spacing 0.35s ease;
+    }
+
+    /* ── Gold underline slide-in on hover ───────────────────────── */
+    .mob-menu__list>li>a::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: #c9a96e;
+        transition: width 0.35s ease, left 0.35s ease;
+    }
+
+    .mob-menu__list>li>a:hover::after,
+    .mob-menu__list>li>a:focus::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .mob-menu__list a:hover,
+    .mob-menu__list a:focus {
+        color: #c9a96e;
+        letter-spacing: 0.24em;
+    }
+
+    /* ── Submenu items ──────────────────────────────────────────── */
+    .mob-menu__list .mob-menu__sub {
+        list-style: none;
+        padding: 0.25rem 0 0.5rem;
+        margin: 0;
+    }
+
+    .mob-menu__list .mob-menu__sub a {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        opacity: 0.6;
+        padding: 0.5rem 0.5rem;
+    }
+
+    .mob-menu__list .mob-menu__sub a:hover {
+        opacity: 1;
+        color: #c9a96e;
+    }
+
+    /* ── Toggle button (pill at bottom center) ──────────────────── */
+    .mob-menu__toggle {
+        position: relative;
+        isolation: isolate;
+        box-sizing: border-box;
+        inline-size: 6.25rem;
+        block-size: 3.125rem;
+        flex: none;
+        pointer-events: all;
+        cursor: pointer;
+
+        /* Reset button styles */
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-family: inherit;
+        font-size: 1em;
+        color: #ebecef;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ── Circle background (expands on open) ─────────────────────── */
+    .mob-menu__toggle::before {
+        content: '';
+        box-sizing: border-box;
+        font-size: 6.25rem;
+        inline-size: 1em;
+        block-size: 1em;
+        border: 1px solid #343935;
+        background-color: #343935;
+        border-radius: 50%;
+        position: absolute;
+        inset-block-end: -0.5em;
+        inset-inline-start: calc(50% - 0.5em);
+        z-index: -1;
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── Hamburger icon ─────────────────────────────────────────── */
+    .mob-menu__hamburger {
+        position: absolute;
+        inset-inline-start: 50%;
+        inset-block-end: 0.75rem;
+        transform: translateX(-50%);
+        inline-size: 1.5rem;
+        block-size: 1rem;
+        display: inline-flex;
+    }
+
+    .mob-menu__hamburger-group {
+        position: relative;
+        inline-size: 100%;
+        block-size: 100%;
+    }
+
+    .mob-menu__hamburger-group::before,
+    .mob-menu__hamburger-group::after,
+    .mob-menu__hamburger-label {
+        content: '';
+        inline-size: 100%;
+        block-size: 0;
+        border-top: 2px solid #ebecef;
+        border-radius: 2px;
+        position: absolute;
+        left: 0;
+        transition: transform 0.25s ease, opacity 0.25s ease, inset-block-start 0.25s ease, border-color 0.3s ease;
+    }
+
+    .mob-menu__hamburger-group::before {
+        inset-block-start: 0;
+        inline-size: 70%;
+        left: 15%;
+    }
+
+    .mob-menu__hamburger-label {
+        inset-block-start: calc(50% - 1px);
+    }
+
+    .mob-menu__hamburger-group::after {
+        inset-block-start: calc(100% - 2px);
+        inline-size: 70%;
+        left: 15%;
+    }
+
+    /* ── Screen reader text ─────────────────────────────────────── */
+    .mob-menu__sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        border: none;
+        clip: rect(1px, 1px, 1px, 1px);
+        overflow: hidden;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+     OPEN STATE — class .mob-menu--open added by JS
+     ══════════════════════════════════════════════════════════════ */
+
+    .mob-menu--open {
+        block-size: 100%;
+        pointer-events: all;
+        background-color: #343935;
+    }
+
+    .mob-menu--open .mob-menu__container {
+        flex-grow: 1;
+        opacity: 1;
+        pointer-events: all;
+        will-change: opacity;
+        transition-duration: 0.3s;
+        transition-delay: 0.35s;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mob-menu--open .mob-menu__list {
+        display: block;
+    }
+
+    /* Circle expand to fill screen */
+    .mob-menu--open .mob-menu__toggle::before {
+        transform: translate3d(-50vw, -100vh, 0) scale(8);
+        transition-duration: 0.6s;
+    }
+
+    /* Hamburger → X with gold accent */
+    .mob-menu--open .mob-menu__hamburger-group::before {
+        inset-block-start: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        inline-size: 100%;
+        left: 0;
+        border-color: #c9a96e;
+    }
+
+    .mob-menu--open .mob-menu__hamburger-label {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .mob-menu--open .mob-menu__hamburger-group::after {
+        inset-block-start: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        inline-size: 100%;
+        left: 0;
+        border-color: #c9a96e;
+    }
+
+    /* ── Nav item stagger animation ─────────────────────────────── */
+    .mob-menu--open .mob-menu__list li {
+        animation: mobMenuFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(1) {
+        animation-delay: 0.40s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(2) {
+        animation-delay: 0.47s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(3) {
+        animation-delay: 0.54s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(4) {
+        animation-delay: 0.61s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(5) {
+        animation-delay: 0.68s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(6) {
+        animation-delay: 0.75s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(7) {
+        animation-delay: 0.82s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(8) {
+        animation-delay: 0.89s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(9) {
+        animation-delay: 0.96s;
+    }
+
+    .mob-menu--open .mob-menu__list li:nth-child(10) {
+        animation-delay: 1.03s;
+    }
+
+    /* ── Gold decorative line below nav ─────────────────────────── */
+    .mob-menu--open .mob-menu__list::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+        margin: 2rem auto 0;
+    }
+
+    @keyframes mobMenuFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(18px) scale(0.97);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* ── Body scroll lock when open ─────────────────────────────── */
+    body.mob-menu-lock {
+        overflow: hidden !important;
+        position: fixed;
+        width: 100%;
+    }
+}

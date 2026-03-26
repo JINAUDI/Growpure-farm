@@ -1,0 +1,1013 @@
+/* ==========================================================================
+   Mobile Hero Section — Light/Dark Mode
+   Toggle icon is the ONLY sun/moon visual. No duplicate celestial graphics.
+   Only visible on viewports ≤ 768px. Desktop hero is untouched.
+   ========================================================================== */
+
+/* ---------- Hide on Desktop ---------- */
+.mobile-hero {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-hero {
+        display: block;
+    }
+
+    .cs_hero.cs_style_1 {
+        display: none !important;
+    }
+
+    /* ---- Hide desktop top-left drawer sun icon on mobile ---- */
+    .cs_estate_drawer_trigger {
+        display: none !important;
+    }
+}
+
+/* ---------- Mobile Hero Base ---------- */
+.mobile-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #1a1a2e;
+    animation: mobileHeroReveal 800ms ease-out both;
+}
+
+@keyframes mobileHeroReveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---------- Image Layers ---------- */
+.mobile-hero__images {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.mobile-hero__img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1600ms ease-in-out 300ms;
+    will-change: opacity;
+}
+
+.mobile-hero__img.active {
+    opacity: 1;
+}
+
+
+/* Fallback gradients */
+.mobile-hero__img--light.fallback {
+    background: linear-gradient(160deg, #f8e8c8 0%, #f5d9a0 25%, #e8c88a 50%, #d4a86a 75%, #c49660 100%);
+}
+
+.mobile-hero__img--dark.fallback {
+    background: linear-gradient(160deg, #0d1b2a 0%, #1b2838 25%, #1a2332 50%, #162230 75%, #0f1923 100%);
+}
+
+/* ---------- Overlay ---------- */
+.mobile-hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: background 800ms ease-in-out;
+}
+
+.mobile-hero.mode-light .mobile-hero__overlay {
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.25) 0%,
+            rgba(0, 0, 0, 0.18) 25%,
+            rgba(0, 0, 0, 0.15) 40%,
+            rgba(0, 0, 0, 0.12) 55%,
+            rgba(0, 0, 0, 0.40) 100%);
+}
+
+.mobile-hero.mode-dark .mobile-hero__overlay {
+    background: linear-gradient(to bottom,
+            rgba(10, 10, 30, 0.35) 0%,
+            rgba(10, 10, 30, 0.10) 35%,
+            rgba(10, 10, 30, 0.08) 55%,
+            rgba(10, 10, 30, 0.55) 100%);
+}
+
+/* ==========================================================================
+   SKY TINT (atmospheric)
+   ========================================================================== */
+.mobile-hero__sky-tint {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out, background 1.2s ease-in-out;
+}
+
+.mobile-hero.mode-light .mobile-hero__sky-tint {
+    opacity: 0.15;
+    background: linear-gradient(to bottom,
+            rgba(255, 200, 80, 0.4) 0%,
+            rgba(255, 180, 60, 0.15) 30%,
+            transparent 60%);
+}
+
+.mobile-hero.mode-dark .mobile-hero__sky-tint {
+    opacity: 0.25;
+    background: linear-gradient(to bottom,
+            rgba(255, 120, 40, 0.2) 0%,
+            rgba(180, 80, 30, 0.15) 20%,
+            rgba(20, 20, 60, 0.25) 50%,
+            rgba(10, 10, 30, 0.3) 100%);
+}
+
+/* ==========================================================================
+   FOG (day only atmosphere)
+   ========================================================================== */
+.mobile-hero__fog {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(to top,
+            rgba(255, 255, 255, 0.08) 0%,
+            rgba(255, 255, 255, 0.03) 25%,
+            transparent 50%);
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.mobile-hero.mode-light .mobile-hero__fog {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   FARM LIGHTS (evening only)
+   ========================================================================== */
+.mobile-hero__farm-lights {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.mobile-hero__farm-light {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FFD166;
+    box-shadow: 0 0 8px 3px rgba(255, 209, 102, 0.5), 0 0 20px 6px rgba(255, 180, 60, 0.2);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.mobile-hero.mode-dark .mobile-hero__farm-light:nth-child(1) {
+    opacity: 0.9;
+    transform: scale(1);
+    transition-delay: 0.8s;
+}
+
+.mobile-hero.mode-dark .mobile-hero__farm-light:nth-child(2) {
+    opacity: 0.8;
+    transform: scale(1);
+    transition-delay: 1.1s;
+}
+
+.mobile-hero.mode-dark .mobile-hero__farm-light:nth-child(3) {
+    opacity: 0.85;
+    transform: scale(1);
+    transition-delay: 1.4s;
+}
+
+.mobile-hero.mode-dark .mobile-hero__farm-light:nth-child(4) {
+    opacity: 0.7;
+    transform: scale(1);
+    transition-delay: 1.7s;
+}
+
+.mobile-hero.mode-dark .mobile-hero__farm-light:nth-child(5) {
+    opacity: 0.75;
+    transform: scale(1);
+    transition-delay: 2.0s;
+}
+
+.mobile-hero.mode-dark .mobile-hero__farm-light {
+    animation: farmLightFlicker 3s ease-in-out infinite alternate;
+}
+
+@keyframes farmLightFlicker {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+/* ==========================================================================
+   CONTENT: Title + Tagline
+   ========================================================================== */
+.mobile-hero__content {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 25vh;
+    pointer-events: none;
+}
+
+.mobile-hero__content>* {
+    pointer-events: auto;
+}
+
+.mobile-hero__title {
+    text-align: center;
+    padding: 0 24px;
+}
+
+.mobile-hero__title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3);
+    line-height: 1.15;
+    transition: text-shadow 700ms ease;
+}
+
+.mobile-hero.mode-dark .mobile-hero__title h2 {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(150, 170, 220, 0.1);
+}
+
+.mobile-hero__title p {
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   TOGGLE PILL — Centered Bottom
+   ========================================================================== */
+.mobile-hero__toggle-pill {
+    position: absolute;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 12px 22px 12px 16px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 28px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    transition: background 700ms ease, border-color 700ms ease, box-shadow 700ms ease, transform 140ms ease;
+    white-space: nowrap;
+}
+
+.mobile-hero.mode-dark .mobile-hero__toggle-pill {
+    background: rgba(15, 20, 40, 0.3);
+    border-color: rgba(150, 170, 220, 0.15);
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(150, 170, 220, 0.05) inset;
+}
+
+/* Tap micro-scale */
+.mobile-hero__toggle-pill:active {
+    transform: translateX(-50%) scale(0.94);
+}
+
+@media (max-height: 600px) {
+    .mobile-hero__toggle-pill {
+        bottom: 4vh;
+    }
+
+    .mobile-hero__content {
+        padding-top: 22vh;
+    }
+}
+
+.mobile-hero__mode-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: color 400ms ease;
+    user-select: none;
+}
+
+/* ==========================================================================
+   TOGGLE SWITCH — Sun/Moon with Orbital Animation
+   The toggle icon IS the only celestial object.
+   ========================================================================== */
+.mobile-hero__toggle {
+    --toggle-w: 68px;
+    --toggle-h: 34px;
+    --toggle-knob: 28px;
+    --toggle-pad: 3px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: var(--toggle-w);
+    height: var(--toggle-h);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+}
+
+.mobile-hero__toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Track */
+.mobile-hero__toggle-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: calc(var(--toggle-h) / 2);
+    background: linear-gradient(135deg, #89CFF0, #60A5FA);
+    transition: background 600ms ease-in-out;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-track {
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+/* Stars (dark mode) */
+.mobile-hero__toggle-stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 600ms ease-in-out 200ms;
+}
+
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-track .mobile-hero__toggle-stars {
+    opacity: 1;
+}
+
+.mobile-hero__toggle-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.mobile-hero__toggle-star:nth-child(1) {
+    top: 6px;
+    left: 9px;
+    animation-delay: 0s;
+}
+
+.mobile-hero__toggle-star:nth-child(2) {
+    top: 11px;
+    left: 17px;
+    animation-delay: 0.5s;
+}
+
+.mobile-hero__toggle-star:nth-child(3) {
+    top: 7px;
+    left: 27px;
+    animation-delay: 1s;
+}
+
+.mobile-hero__toggle-star:nth-child(4) {
+    top: 20px;
+    left: 13px;
+    animation-delay: 0.3s;
+}
+
+.mobile-hero__toggle-star:nth-child(5) {
+    top: 16px;
+    left: 24px;
+    animation-delay: 0.7s;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* Clouds (light mode) */
+.mobile-hero__toggle-clouds {
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    transition: opacity 400ms ease-in-out;
+}
+
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-track .mobile-hero__toggle-clouds {
+    opacity: 0;
+}
+
+.mobile-hero__toggle-cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+}
+
+.mobile-hero__toggle-cloud:nth-child(1) {
+    width: 11px;
+    height: 5px;
+    top: 8px;
+    right: 8px;
+}
+
+.mobile-hero__toggle-cloud:nth-child(2) {
+    width: 7px;
+    height: 3px;
+    top: 16px;
+    right: 14px;
+}
+
+/* ---------- Knob ---------- */
+.mobile-hero__toggle-knob {
+    position: absolute;
+    top: var(--toggle-pad);
+    left: var(--toggle-pad);
+    width: var(--toggle-knob);
+    height: var(--toggle-knob);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 8px rgba(255, 200, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: left 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        background 0.8s ease,
+        box-shadow 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-knob {
+    left: calc(100% - var(--toggle-knob) - var(--toggle-pad));
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    box-shadow: 0 0 12px rgba(200, 210, 240, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Soft glow halo around knob in day mode */
+.mobile-hero__toggle-knob::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 200, 50, 0.35) 0%, transparent 70%);
+    opacity: 1;
+    transition: opacity 0.8s ease, background 0.8s ease;
+    pointer-events: none;
+}
+
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-knob::after {
+    background: radial-gradient(circle, rgba(180, 200, 240, 0.2) 0%, transparent 70%);
+    opacity: 0.8;
+}
+
+/* ---------- Sun Icon — Horizon Slide Animation ---------- */
+.mobile-hero__toggle-sun-rays {
+    width: 18px;
+    height: 18px;
+    transition: none;
+    /* handled by animation */
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+
+/* Sun exits: slides right (day → evening) */
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-knob .mobile-hero__toggle-sun-rays {
+    animation: knobSunExitRight 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Sun enters: slides in from left (evening → day) */
+.mobile-hero__toggle input:not(:checked)~.mobile-hero__toggle-knob .mobile-hero__toggle-sun-rays {
+    animation: knobSunEnterLeft 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes knobSunExitRight {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.9) translateX(10px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.85) translateX(18px);
+    }
+}
+
+@keyframes knobSunEnterLeft {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateX(-18px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.92) translateX(-6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+/* ---------- Moon Icon — Horizon Slide Animation ---------- */
+.mobile-hero__toggle-moon {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.85) translateX(-18px);
+    transition: none;
+    /* handled by animation */
+}
+
+/* Moon enters: slides in from left (day → evening) */
+.mobile-hero__toggle input:checked~.mobile-hero__toggle-knob .mobile-hero__toggle-moon {
+    animation: knobMoonEnterLeft 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+/* Moon exits: slides right (evening → day) */
+.mobile-hero__toggle input:not(:checked)~.mobile-hero__toggle-knob .mobile-hero__toggle-moon {
+    animation: knobMoonExitRight 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes knobMoonEnterLeft {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateX(-18px);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.92) translateX(-6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes knobMoonExitRight {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.9) translateX(10px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.85) translateX(18px);
+    }
+}
+
+/* ---------- Moon Craters ---------- */
+.mobile-hero__toggle-crater {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(148, 163, 184, 0.4);
+}
+
+.mobile-hero__toggle-crater:nth-child(1) {
+    width: 6px;
+    height: 6px;
+    top: 3px;
+    left: 8px;
+}
+
+.mobile-hero__toggle-crater:nth-child(2) {
+    width: 4px;
+    height: 4px;
+    top: 14px;
+    left: 5px;
+}
+
+.mobile-hero__toggle-crater:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    top: 9px;
+    left: 16px;
+}
+
+/* ==========================================================================
+   CELESTIAL OBJECT — Sun (day) / Moon (evening)
+   In-flow: appears above the title in the content column.
+   Only one exists. Tapping opens the info drawer.
+   ========================================================================== */
+.mobile-hero__celestial {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    /* space between celestial and title */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 6;
+    flex-shrink: 0;
+}
+
+.mobile-hero__celestial:active {
+    transform: scale(0.88);
+}
+
+/* --- Radial glow behind the celestial body --- */
+.mobile-hero__celestial-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: background 1.2s ease, opacity 1.2s ease;
+    opacity: 0.6;
+    background: radial-gradient(circle, rgba(255, 200, 50, 0.45) 0%, transparent 70%);
+}
+
+.mobile-hero.mode-dark .mobile-hero__celestial-glow {
+    background: radial-gradient(circle, rgba(180, 200, 255, 0.3) 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+/* --- Sun Icon --- */
+.mobile-hero__celestial-sun {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0) scale(1);
+    transform-origin: center center;
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: none;
+    filter: brightness(1) drop-shadow(0 0 10px rgba(255, 200, 50, 0.6));
+    z-index: 6;
+}
+
+.mobile-hero__celestial-sun svg {
+    width: 52px;
+    height: 52px;
+}
+
+/* Sun idle pulse — only when .idle */
+.mobile-hero__celestial-sun.idle svg {
+    animation: celestialSunPulse 4s ease-in-out infinite;
+}
+
+/* Sun idle float */
+.mobile-hero__celestial-sun.idle {
+    animation: celestialFloat 6s ease-in-out infinite;
+}
+
+@keyframes celestialSunPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 8px rgba(255, 200, 50, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 22px rgba(255, 180, 40, 0.8));
+    }
+}
+
+/* --- Moon Icon (CSS crescent) --- */
+.mobile-hero__celestial-moon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(-160px, 70px, 0) scale(0.78);
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: none;
+    filter: brightness(0.6) drop-shadow(0 0 10px rgba(200, 210, 240, 0.5));
+    z-index: 6;
+}
+
+.mobile-hero__crescent {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: inset -12px -2px 0 0 #e2e8f0;
+    position: relative;
+}
+
+.mobile-hero__moon-star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.mobile-hero__moon-star:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.mobile-hero__moon-star:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+/* --- Floating Hint --- */
+.mobile-hero__celestial-hint {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    opacity: 0;
+    animation: celestialHintFade 4s ease 2s forwards;
+    pointer-events: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes celestialHintFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(4px);
+    }
+
+    20% {
+        opacity: 0.8;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-4px);
+    }
+}
+
+/* ==========================================================================
+   CINEMATIC HORIZON SWAP — Now handled by JS requestAnimationFrame engine.
+   CSS keyframes removed. Idle animations retained below.
+   ========================================================================== */
+
+/* ---- Subtle idle float after placement ---- */
+@keyframes celestialFloat {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0, -1.5px, 0) scale(1);
+    }
+}
+
+/* --- Moon idle glow (evening, idle ONLY) --- */
+.mobile-hero__celestial-moon.idle {
+    animation: celestialMoonFloat 6s ease-in-out infinite;
+}
+
+.mobile-hero.mode-dark .mobile-hero__celestial-moon.idle .mobile-hero__crescent {
+    animation: celestialMoonGlow 4s ease-in-out infinite;
+}
+
+@keyframes celestialMoonFloat {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0, -1.5px, 0) scale(1);
+    }
+}
+
+@keyframes celestialMoonGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 8px rgba(200, 210, 240, 0.45));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 22px rgba(180, 200, 255, 0.7));
+    }
+}
+
+/* ==========================================================================
+   DAY / EVENING LIGHTING — scene brightness & warm overlay
+   ========================================================================== */
+/* Day: slight brightness boost via the image layer
+   Evening: warm amber overlay that fades in */
+.mobile-hero__warm-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+            rgba(255, 100, 20, 0.12) 0%,
+            rgba(200, 60, 10, 0.08) 30%,
+            transparent 65%);
+    opacity: 0;
+    transition: opacity 1.4s ease;
+}
+
+.mobile-hero.mode-dark .mobile-hero__warm-overlay {
+    opacity: 1;
+}
+
+.mobile-hero.mode-light .mobile-hero__img--light {
+    filter: brightness(1.15);
+    transition: filter 1.4s ease;
+}
+
+/* ==========================================================================
+   INFO DRAWER — Slide-up glassmorphism panel
+   ========================================================================== */
+.mobile-hero__drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    background: rgba(0, 0, 0, 0);
+    pointer-events: none;
+    transition: background 400ms ease;
+}
+
+.mobile-hero__drawer-backdrop.active {
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+}
+
+.mobile-hero__drawer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    max-height: 70vh;
+    background: rgba(15, 20, 35, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px 24px 0 0;
+    padding: 32px 24px 40px;
+    transform: translateY(100%);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-hero__drawer.open {
+    transform: translateY(0);
+}
+
+/* Drag handle indicator */
+.mobile-hero__drawer::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+}
+
+.mobile-hero__drawer-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 200ms ease, transform 140ms ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.mobile-hero__drawer-close:active {
+    transform: scale(0.85);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.mobile-hero__drawer-content {
+    padding-top: 8px;
+}
+
+.mobile-hero__drawer-eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b8860b;
+    margin-bottom: 8px;
+}
+
+.mobile-hero__drawer-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.mobile-hero__drawer-divider {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #b8860b, transparent);
+    margin-bottom: 16px;
+}
+
+.mobile-hero__drawer-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 14px;
+}
+
+.mobile-hero__drawer-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Body scroll lock when drawer is open */
+body.drawer-open {
+    overflow: hidden;
+    touch-action: none;
+}

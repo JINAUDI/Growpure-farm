@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Royal Stays at Growpure Farm — Discover our 6 heritage-inspired luxury cottages nestled in nature. Experience royal comfort with an agro-tourism soul.">
+  <meta name="author" content="Growpure Farm">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/growpure-logo.webp">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/mobile-menu.css">
+  <link rel="stylesheet" href="assets/css/mobile-header-fix.css">
+  <link rel="stylesheet" href="assets/css/royal-stays.css">
+  <title>Royal Farm Stays — Growpure Farms</title>
+</head>
+
+<body class="page-royal-stays page-transparent-header rs-page">
+  <!-- Preloader -->
+  <div class="cs_preloader cs_center">
+    <div class="cs_preloader_in cs_center_column text-center">
+      <span class="cs_hotel_icon cs_center cs_radius_100 cs_mb_24 position-relative">
+        <span class="cs_fs_64 cs_accent_color cs_heading_font position-relative z-1">G</span>
+      </span>
+      <div class="cs_loading_text cs_fs_20 cs_medium cs_heading_color cs_heading_font text-uppercase mb-0">
+        <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="cs_site_header cs_style_1 cs_type_2 cs_white_color cs_sticky_header">
+    <div class="cs_header_main position-relative">
+      <div class="container">
+        <div class="cs_main_header_in" style="position: relative;">
+          <div class="cs_secondary_logo" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10;">
+            <a href="index.html" aria-label="Home page link">
+              <img src="assets/img/logo-secondary.png" alt="Secondary Logo" style="max-height: 200px; width: auto; object-fit: contain;">
+            </a>
+          </div>
+          <div class="cs_main_header_left">
+            <a href="index.html" aria-label="Home page link" class="cs_site_brand">
+              <img src="assets/img/growpure-logo.webp" alt="GrowPure Logo"
+                style="max-height: 200px; width: auto; object-fit: contain;">
+            </a>
+          </div>
+          <div class="cs_main_header_center">
+            <div class="cs_nav">
+              <div class="cs_nav_list_wrap">
+                  <div class="cs_nav_links_wrap">
+                  <ul class="cs_nav_list cs_mp_0">
+                    <li><a href="index.html" aria-label="Nav link">Home</a></li>
+                    <li><a href="about-us.html" aria-label="Nav link">Our Farm</a></li>
+                    <li><a href="room-details-v2.html" aria-label="Nav link">Royal Stays</a></li>
+                  </ul>
+                  <ul class="cs_nav_list cs_mp_0">
+                    <li class="menu-item-has-children">
+                      <a href="javascript:void(0)">Experiences</a>
+                      <ul>
+                        <li><a href="services.html" aria-label="Nav link">Guest Amenities</a></li>
+                        <li><a href="farm-adventures.html" aria-label="Nav link">Farm Adventures</a></li>
+                        <li><a href="gallery.html" aria-label="Nav link">Our Gallery</a></li>
+                        <li><a href="faq.html" aria-label="Nav link">FAQ &amp; Answer</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="contact-us.html" aria-label="Nav link">Contact</a></li>
+                    <li class="cs_book_now_li"><a href="https://www.secure-booking-engine.com/accounts/cBOS9aZP7Ao_NpjSJzeHOw/properties/vMlxJcfbfpqT9YvcjR2NsQ/booking-engine/web/source/4wsctBw6Oq6j-g9XuxeRzQ/" target="_blank" rel="noopener noreferrer" class="cs_book_now_btn" aria-label="Book Now">Book Now</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Side Navigation Dots -->
+  <nav class="rs-side-nav" aria-label="Room navigation">
+    <button class="rs-side-dot rs-active" data-target="0" data-label="Welcome" aria-label="Go to welcome"></button>
+    <button class="rs-side-dot" data-target="1" data-label="Cottage 1" aria-label="Go to Cottage 1"></button>
+    <button class="rs-side-dot" data-target="2" data-label="Cottage 2" aria-label="Go to Cottage 2"></button>
+    <button class="rs-side-dot" data-target="3" data-label="Cottage 3" aria-label="Go to Cottage 3"></button>
+    <button class="rs-side-dot" data-target="4" data-label="Cottage 4" aria-label="Go to Cottage 4"></button>
+    <button class="rs-side-dot" data-target="5" data-label="Cottage 5" aria-label="Go to Cottage 5"></button>
+    <button class="rs-side-dot" data-target="6" data-label="Cottage 6" aria-label="Go to Cottage 6"></button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════
+       Hero Section
+       ═══════════════════════════════════════════════════════ -->
+  <section class="rs-hero" data-rs-index="0" id="rs-hero">
+    <div class="rs-hero-content">
+      <div class="rs-hero-leaf">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <p class="rs-hero-subtitle rs-anim rs-anim-delay-1">Growpure Farms</p>
+      <h1 class="rs-hero-title rs-anim rs-anim-delay-2">Royal Farm Stays</h1>
+      <p class="rs-hero-tagline rs-anim rs-anim-delay-3">Where Heritage Meets Nature</p>
+    </div>
+    <div class="rs-hero-scroll-cue">
+      <span>Scroll to explore</span>
+      <div class="rs-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ROOM 1
+       ═══════════════════════════════════════════════════ -->
+  <section class="rs-room-section" data-rs-index="1" id="rs-room-1">
+    <div class="rs-image-panel">
+      <div class="rs-slide-container">
+        <div class="rs-slide rs-active">
+          <img src="assets/rooms/room1/1.webp" alt="Cottage 1 — View 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room1/2.webp" alt="Cottage 1 — View 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room1/3.webp" alt="Cottage 1 — View 3" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room1/4.webp" alt="Cottage 1 — View 4" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room1/bathroom1_1.webp" alt="Cottage 1 — Bathroom 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room1/bathrrom1_2.webp" alt="Cottage 1 — Bathroom 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room1/bathrrom1_3.webp" alt="Cottage 1 — Bathroom 3" loading="lazy">
+        </div>
+      </div>
+      <div class="rs-image-overlay"></div>
+      <div class="rs-slider-controls">
+        <button class="rs-arrow rs-arrow-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="rs-dots">
+          <button class="rs-dot rs-active" aria-label="Image 1"></button>
+          <button class="rs-dot" aria-label="Image 2"></button>
+          <button class="rs-dot" aria-label="Image 3"></button>
+          <button class="rs-dot" aria-label="Image 4"></button>
+          <button class="rs-dot" aria-label="Image 5"></button>
+          <button class="rs-dot" aria-label="Image 6"></button>
+          <button class="rs-dot" aria-label="Image 7"></button>
+        </div>
+        <button class="rs-arrow rs-arrow-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rs-content-panel">
+      <div class="rs-leaf-accent rs-leaf-top-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <div class="rs-content-inner">
+        <div class="rs-room-number rs-anim rs-anim-delay-1">Cottage 01</div>
+        <h2 class="rs-room-name rs-anim rs-anim-delay-2">Cottage 1</h2>
+        <p class="rs-room-tagline rs-anim rs-anim-delay-3">Where heritage lives in every grain of wood</p>
+        <p class="rs-room-desc rs-anim rs-anim-delay-3">Adorned with professionally restored original vintage furniture, from the hand-carved rosewood bed frame to the ornate dressing mirror, every piece in this cottage carries the soul of a bygone era. Meticulous restoration preserves each detail, letting you sleep amid genuine antique grandeur with modern comfort.</p>
+        <div class="rs-divider rs-anim rs-anim-delay-4"></div>
+        <ul class="rs-highlights rs-anim rs-anim-delay-5">
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Guests</span><span class="rs-highlight-value">2 – 3</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Area</span><span class="rs-highlight-value">450 sq ft</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Bed</span><span class="rs-highlight-value">King Size</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Includes</span><span class="rs-highlight-value">Free Amenities</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ROOM 2 (reversed)
+       ═══════════════════════════════════════════════════ -->
+  <section class="rs-room-section rs-reversed" data-rs-index="2" id="rs-room-2">
+    <div class="rs-image-panel">
+      <div class="rs-slide-container">
+        <div class="rs-slide rs-active">
+          <img src="assets/rooms/room2/1.webp" alt="Cottage 2 — View 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room2/2.webp" alt="Cottage 2 — View 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room2/bathroom2_1.webp" alt="Cottage 2 — Bathroom 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room2/bathrrom2_2.webp" alt="Cottage 2 — Bathroom 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room2/bathrrom2_3.webp" alt="Cottage 2 — Bathroom 3" loading="lazy">
+        </div>
+      </div>
+      <div class="rs-image-overlay"></div>
+      <div class="rs-slider-controls">
+        <button class="rs-arrow rs-arrow-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="rs-dots">
+          <button class="rs-dot rs-active" aria-label="Image 1"></button>
+          <button class="rs-dot" aria-label="Image 2"></button>
+          <button class="rs-dot" aria-label="Image 3"></button>
+          <button class="rs-dot" aria-label="Image 4"></button>
+          <button class="rs-dot" aria-label="Image 5"></button>
+        </div>
+        <button class="rs-arrow rs-arrow-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rs-content-panel">
+      <div class="rs-leaf-accent rs-leaf-bottom-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <div class="rs-content-inner">
+        <div class="rs-room-number rs-anim rs-anim-delay-1">Cottage 02</div>
+        <h2 class="rs-room-name rs-anim rs-anim-delay-2">Cottage 2</h2>
+        <p class="rs-room-tagline rs-anim rs-anim-delay-3">Original charm, expertly revived</p>
+        <p class="rs-room-desc rs-anim rs-anim-delay-3">Step inside to discover a curated collection of professionally restored vintage furnishings, including a colonial-era writing desk, a brass-fitted teak armoire, and hand-turned bedside tables. Each piece has been lovingly brought back to life by master craftsmen, blending the patina of history with the freshness of careful restoration.</p>
+        <div class="rs-divider rs-anim rs-anim-delay-4"></div>
+        <ul class="rs-highlights rs-anim rs-anim-delay-5">
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Guests</span><span class="rs-highlight-value">2 – 3</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Area</span><span class="rs-highlight-value">450 sq ft</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Bed</span><span class="rs-highlight-value">King Size</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Includes</span><span class="rs-highlight-value">Free Amenities</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ROOM 3
+       ═══════════════════════════════════════════════════ -->
+  <section class="rs-room-section" data-rs-index="3" id="rs-room-3">
+    <div class="rs-image-panel">
+      <div class="rs-slide-container">
+        <div class="rs-slide rs-active">
+          <img src="assets/rooms/room3/1.webp" alt="Cottage 3 — View 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room3/2.webp" alt="Cottage 3 — View 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room3/bathroom3_1.webp" alt="Cottage 3 — Bathroom 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room3/bathrrom3_2.webp" alt="Cottage 3 — Bathroom 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room3/bathrrom3_3.webp" alt="Cottage 3 — Bathroom 3" loading="lazy">
+        </div>
+      </div>
+      <div class="rs-image-overlay"></div>
+      <div class="rs-slider-controls">
+        <button class="rs-arrow rs-arrow-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="rs-dots">
+          <button class="rs-dot rs-active" aria-label="Image 1"></button>
+          <button class="rs-dot" aria-label="Image 2"></button>
+          <button class="rs-dot" aria-label="Image 3"></button>
+          <button class="rs-dot" aria-label="Image 4"></button>
+          <button class="rs-dot" aria-label="Image 5"></button>
+        </div>
+        <button class="rs-arrow rs-arrow-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rs-content-panel">
+      <div class="rs-leaf-accent rs-leaf-top-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <div class="rs-content-inner">
+        <div class="rs-room-number rs-anim rs-anim-delay-1">Cottage 03</div>
+        <h2 class="rs-room-name rs-anim rs-anim-delay-2">Cottage 3</h2>
+        <p class="rs-room-tagline rs-anim rs-anim-delay-3">Timeless craftsmanship in every corner</p>
+        <p class="rs-room-desc rs-anim rs-anim-delay-3">This sun-kissed cottage showcases professionally restored original vintage furniture sourced from Rajasthani havelis, including an intricately inlaid chessboard side table, a hand-forged iron canopy bed, and a restored jharokha mirror frame. Every surface tells a story, every joint speaks of artisan skill preserved through expert restoration.</p>
+        <div class="rs-divider rs-anim rs-anim-delay-4"></div>
+        <ul class="rs-highlights rs-anim rs-anim-delay-5">
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Guests</span><span class="rs-highlight-value">2 – 3</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Area</span><span class="rs-highlight-value">450 sq ft</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Bed</span><span class="rs-highlight-value">King Size</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Includes</span><span class="rs-highlight-value">Free Amenities</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ROOM 4 (reversed)
+       ═══════════════════════════════════════════════════ -->
+  <section class="rs-room-section rs-reversed" data-rs-index="4" id="rs-room-4">
+    <div class="rs-image-panel">
+      <div class="rs-slide-container">
+        <div class="rs-slide rs-active">
+          <img src="assets/rooms/room4/1.webp" alt="Cottage 4 — View 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room4/2.webp" alt="Cottage 4 — View 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room4/bathroom4_1.webp" alt="Cottage 4 — Bathroom 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room4/bathrrom4_2.webp" alt="Cottage 4 — Bathroom 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room4/bathrrom4_3.webp" alt="Cottage 4 — Bathroom 3" loading="lazy">
+        </div>
+      </div>
+      <div class="rs-image-overlay"></div>
+      <div class="rs-slider-controls">
+        <button class="rs-arrow rs-arrow-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="rs-dots">
+          <button class="rs-dot rs-active" aria-label="Image 1"></button>
+          <button class="rs-dot" aria-label="Image 2"></button>
+          <button class="rs-dot" aria-label="Image 3"></button>
+          <button class="rs-dot" aria-label="Image 4"></button>
+          <button class="rs-dot" aria-label="Image 5"></button>
+        </div>
+        <button class="rs-arrow rs-arrow-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rs-content-panel">
+      <div class="rs-leaf-accent rs-leaf-bottom-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <div class="rs-content-inner">
+        <div class="rs-room-number rs-anim rs-anim-delay-1">Cottage 04</div>
+        <h2 class="rs-room-name rs-anim rs-anim-delay-2">Cottage 4</h2>
+        <p class="rs-room-tagline rs-anim rs-anim-delay-3">Rustic elegance, authentically restored</p>
+        <p class="rs-room-desc rs-anim rs-anim-delay-3">Nestled among native trees, this cottage is furnished with professionally restored original vintage pieces like a weathered sheesham rocking chair, an antique grain-chest repurposed as a coffee table, and reclaimed timber shelving. The warm, lived-in character of each piece has been preserved while ensuring lasting quality through careful restoration.</p>
+        <div class="rs-divider rs-anim rs-anim-delay-4"></div>
+        <ul class="rs-highlights rs-anim rs-anim-delay-5">
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Guests</span><span class="rs-highlight-value">2 – 3</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Area</span><span class="rs-highlight-value">450 sq ft</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Bed</span><span class="rs-highlight-value">King Size</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Includes</span><span class="rs-highlight-value">Free Amenities</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ROOM 5
+       ═══════════════════════════════════════════════════ -->
+  <section class="rs-room-section" data-rs-index="5" id="rs-room-5">
+    <div class="rs-image-panel">
+      <div class="rs-slide-container">
+        <div class="rs-slide rs-active">
+          <img src="assets/rooms/room5/1.webp" alt="Cottage 5 — View 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room5/2.webp" alt="Cottage 5 — View 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room5/3.webp" alt="Cottage 5 — View 3" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room5/bathroom5_1.webp" alt="Cottage 5 — Bathroom 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room5/bathrrom5_2.webp" alt="Cottage 5 — Bathroom 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room5/bathrrom5_3.webp" alt="Cottage 5 — Bathroom 3" loading="lazy">
+        </div>
+      </div>
+      <div class="rs-image-overlay"></div>
+      <div class="rs-slider-controls">
+        <button class="rs-arrow rs-arrow-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="rs-dots">
+          <button class="rs-dot rs-active" aria-label="Image 1"></button>
+          <button class="rs-dot" aria-label="Image 2"></button>
+          <button class="rs-dot" aria-label="Image 3"></button>
+          <button class="rs-dot" aria-label="Image 4"></button>
+          <button class="rs-dot" aria-label="Image 5"></button>
+          <button class="rs-dot" aria-label="Image 6"></button>
+        </div>
+        <button class="rs-arrow rs-arrow-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rs-content-panel">
+      <div class="rs-leaf-accent rs-leaf-top-right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <div class="rs-content-inner">
+        <div class="rs-room-number rs-anim rs-anim-delay-1">Cottage 05</div>
+        <h2 class="rs-room-name rs-anim rs-anim-delay-2">Cottage 5</h2>
+        <p class="rs-room-tagline rs-anim rs-anim-delay-3">Vintage soul under open skies</p>
+        <p class="rs-room-desc rs-anim rs-anim-delay-3">This stargazer's retreat features professionally restored original vintage furniture, including a planters' mahogany daybed on the veranda, Art Deco bedside lamps with original glass shades, and a hand-stitched leather trunk from the colonial era. Each piece has been painstakingly restored to its former glory, merging starlit serenity with authentic heritage.</p>
+        <div class="rs-divider rs-anim rs-anim-delay-4"></div>
+        <ul class="rs-highlights rs-anim rs-anim-delay-5">
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Guests</span><span class="rs-highlight-value">2 – 3</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Area</span><span class="rs-highlight-value">450 sq ft</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Bed</span><span class="rs-highlight-value">King Size</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Includes</span><span class="rs-highlight-value">Free Amenities</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       ROOM 6 (reversed)
+       ═══════════════════════════════════════════════════ -->
+  <section class="rs-room-section rs-reversed" data-rs-index="6" id="rs-room-6">
+    <div class="rs-image-panel">
+      <div class="rs-slide-container">
+        <div class="rs-slide rs-active">
+          <img src="assets/rooms/room6/room6_1.webp" alt="Cottage 6 — View 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room6/room6_2.webp" alt="Cottage 6 — View 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room6/room6_3.webp" alt="Cottage 6 — View 3" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room6/bathroom6_1.webp" alt="Cottage 6 — Bathroom 1" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room6/bathrrom6_2.webp" alt="Cottage 6 — Bathroom 2" loading="lazy">
+        </div>
+        <div class="rs-slide">
+          <img src="assets/rooms/room6/bathrrom6_3.webp" alt="Cottage 6 — Bathroom 3" loading="lazy">
+        </div>
+      </div>
+      <div class="rs-image-overlay"></div>
+      <div class="rs-slider-controls">
+        <button class="rs-arrow rs-arrow-prev" aria-label="Previous image">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="rs-dots">
+          <button class="rs-dot rs-active" aria-label="Image 1"></button>
+          <button class="rs-dot" aria-label="Image 2"></button>
+          <button class="rs-dot" aria-label="Image 3"></button>
+          <button class="rs-dot" aria-label="Image 4"></button>
+          <button class="rs-dot" aria-label="Image 5"></button>
+          <button class="rs-dot" aria-label="Image 6"></button>
+        </div>
+        <button class="rs-arrow rs-arrow-next" aria-label="Next image">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rs-content-panel">
+      <div class="rs-leaf-accent rs-leaf-bottom-left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      </div>
+      <div class="rs-content-inner">
+        <div class="rs-room-number rs-anim rs-anim-delay-1">Cottage 06</div>
+        <h2 class="rs-room-name rs-anim rs-anim-delay-2">Cottage 6</h2>
+        <p class="rs-room-tagline rs-anim rs-anim-delay-3">A living museum of restored grandeur</p>
+        <p class="rs-room-desc rs-anim rs-anim-delay-3">Our crown jewel is adorned with the finest professionally restored original vintage furniture, including a regal four-poster bed with hand-carved floral motifs, an antique merchant's roll-top desk, and a stately almirah with original brass hardware. Every piece has undergone meticulous restoration by heritage specialists, making this cottage a living tribute to India's rich artisan legacy.</p>
+        <div class="rs-divider rs-anim rs-anim-delay-4"></div>
+        <ul class="rs-highlights rs-anim rs-anim-delay-5">
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Guests</span><span class="rs-highlight-value">2 – 3</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Area</span><span class="rs-highlight-value">450 sq ft</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Bed</span><span class="rs-highlight-value">King Size</span></div>
+          </li>
+          <li class="rs-highlight">
+            <div class="rs-highlight-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div class="rs-highlight-info"><span class="rs-highlight-label">Includes</span><span class="rs-highlight-value">Free Amenities</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cs_footer cs_style_2">
+    <div class="cs_footer_main">
+      <div class="container">
+        <div class="cs_footer_row">
+          <div class="cs_footer_col cs_footer_brand">
+            <div class="cs_footer_logo">
+              <img src="assets/img/growpure-logo.webp" alt="Growpure Logo">
+            </div>
+            <p class="cs_footer_brand_desc">Experience the perfect blend of royal heritage and natural countryside living at Growpure Farm Resort.</p>
+            <div class="cs_footer_location">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Kushalgarh, Banswara, Rajasthan</span>
+            </div>
+          </div>
+          <div class="cs_footer_col cs_footer_nav_col">
+            <h4 class="cs_footer_col_title">Quick Links</h4>
+            <ul class="cs_footer_links">
+              <li><a href="room-details-v2.html">Royal Stays</a></li>
+              <li><a href="about-us.html">Our Farm</a></li>
+              <li><a href="services.html">Experiences</a></li>
+              <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="cs_footer_col cs_footer_connect">
+            <h4 class="cs_footer_col_title">Get In Touch</h4>
+            <div class="cs_footer_contact_item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+919950383019">+91 99503 83019</a>
+            </div>
+            <div class="cs_footer_contact_item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:bookgrowpureluxuryfarm@gmail.com">bookgrowpureluxuryfarm@gmail.com</a>
+            </div>
+            <div class="cs_footer_social">
+              <a href="https://www.facebook.com/profile.php?id=61585407490100" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/growpureluxuryresort?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCjmAfMYjDeS2QzjYOhJEa7Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://wa.me/919950383019" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cs_footer_bottom">
+      <div class="container">
+        <div class="cs_footer_bottom_inner">
+          <p class="cs_copyright">&copy; 2026 Growpure Farm. All rights reserved.</p>
+          <div class="cs_footer_legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="cs_divider">|</span>
+            <a href="terms-conditions.html">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <button type="button" class="cs_scrollup" id="scrollToTopBtn">
+    <svg style="width: 100%; height: 100%;" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23.9999 33.0001C24.3835 33.0001 24.7675 32.8535 25.0604 32.5606L40.0604 17.5606C40.6465 16.9745 40.6465 16.0253 40.0604 15.4396C39.4743 14.8538 38.5252 14.8535 37.9394 15.4396L23.9999 29.3791L10.0604 15.4396C9.47428 14.8535 8.52515 14.8535 7.9394 15.4396C7.35365 16.0257 7.35328 16.9748 7.9394 17.5606L22.9394 32.5606C23.2323 32.8535 23.6163 33.0001 23.9999 33.0001Z" fill="currentColor"></path>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/aos.min.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/datepicker.min.js"></script>
+  <script src="assets/js/odometer.min.js"></script>
+  <script src="assets/js/lightgallery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/mobile-menu.js"></script>
+  <script src="assets/js/royal-stays.js"></script>
+  <!-- Preloader Fallback -->
+  <script>
+    window.addEventListener('load', function () {
+      var preloader = document.querySelector('.cs_preloader');
+      if (preloader) {
+        preloader.classList.add('loaded');
+      }
+    });
+    setTimeout(function () {
+      var preloader = document.querySelector('.cs_preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+        preloader.style.pointerEvents = 'none';
+      }
+    }, 4000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+/* ==========================================================================
+   GALLERY SECTION — Maintain Desktop Proportions at ALL Screen Sizes
+   Uses proportional vw-based scaling so the section scales naturally
+   while keeping visual proportions identical to desktop.
+   Only applies below 1400px; desktop layout is completely untouched.
+   ========================================================================== */
+
+/* ── Force columns to stay side-by-side at ALL sizes ───────────────────── */
+.cs_gallery_wrapper .col-lg-7 {
+  flex: 0 0 58.333333% !important;
+  max-width: 58.333333% !important;
+}
+
+.cs_gallery_wrapper .col-lg-5 {
+  flex: 0 0 41.666667% !important;
+  max-width: 41.666667% !important;
+}
+
+.cs_gallery_wrapper .row {
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+
+/* ── Heading: scale proportionally using clamp ─────────────────────────── */
+/* At 1400px viewport: 11.57vw = 162px (matches desktop inline style)      */
+/* Scales down proportionally; never exceeds 162px on big screens           */
+.cs_gallery_wrapper .cs_section_title.cs_fs_180 {
+  font-size: clamp(42px, 11.57vw, 162px) !important;
+  line-height: 1em !important;
+}
+
+/* ── Subtitle: proportional scaling ────────────────────────────────────── */
+.cs_gallery_wrapper .cs_section_subtitle.cs_fs_24 {
+  font-size: clamp(14px, 1.71vw, 24px) !important;
+  letter-spacing: clamp(3px, 0.43vw, 6px) !important;
+}
+
+/* ── Gallery description text ──────────────────────────────────────────── */
+.cs_gallery_wrapper .cs_card_text p {
+  font-size: clamp(12px, 1.14vw, 16px) !important;
+}
+
+.cs_gallery_wrapper .cs_card_text .cs_text_btn {
+  font-size: clamp(12px, 1.14vw, 16px) !important;
+}
+
+/* ── Image thumbnails: scale proportionally ────────────────────────────── */
+.cs_gallery_wrapper .cs_card.cs_style_5:nth-child(1) .cs_card_thumbnail {
+  min-height: clamp(250px, 49.14vw, 688px) !important;
+}
+
+.cs_gallery_wrapper .cs_card.cs_style_5:nth-child(2) .cs_card_thumbnail {
+  min-height: clamp(140px, 27.28vw, 382px) !important;
+}
+
+.cs_gallery_wrapper .cs_card_thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ── Keep consistent overlap between the two gallery cards ─────────────── */
+.cs_gallery_wrapper .cs_card.cs_style_5:nth-child(2) {
+  margin-top: clamp(-50px, -9.28vw, -130px) !important;
+}
+
+/* ── Ensure the container uses full width on smaller screens ───────────── */
+@media (max-width: 1399px) {
+  section:has(.cs_gallery_wrapper) > .container {
+    max-width: 100% !important;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* ── Spacing before/after gallery section: proportional ────────────────── */
+@media (max-width: 991px) {
+  section:has(.cs_gallery_wrapper) > .cs_height_120 {
+    height: clamp(40px, 8.57vw, 120px) !important;
+  }
+}

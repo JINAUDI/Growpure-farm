@@ -1,0 +1,121 @@
+/* ==========================================================================
+   MOBILE HEADER SPACING FIX
+   Proper logo padding, safe-area support, balanced layout.
+   Scoped to ≤768px. Desktop completely untouched.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* ── Header container ───────────────────────────────────────── */
+    .cs_site_header.cs_style_1 {
+        padding-top: env(safe-area-inset-top, 0px);
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.55) 0%,
+                rgba(0, 0, 0, 0.25) 60%,
+                rgba(0, 0, 0, 0) 100%);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        border-bottom: none !important;
+    }
+
+    /* ── Main header bar ────────────────────────────────────────── */
+    .cs_site_header.cs_style_1.cs_type_2 .cs_main_header_in {
+        min-height: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2px;
+        padding-bottom: 4px;
+        overflow: visible;
+    }
+
+    /* ── Logo — 2x bigger, centered horizontally ─────────────────── */
+    .cs_site_header.cs_style_1.cs_type_2 .cs_main_header_left {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: none;
+        z-index: 22;
+    }
+
+    .cs_site_header.cs_style_1 .cs_site_brand img {
+        max-height: 140px !important;
+        width: auto !important;
+        object-fit: contain;
+        margin-top: env(safe-area-inset-top, 0px);
+        transition: max-height 0.4s ease;
+    }
+
+    /* ── Hamburger — right padding ──────────────────────────────── */
+    .cs_site_header.cs_style_1 .cs_menu_toggle {
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* ── Remove all divider/border lines ────────────────────────── */
+    .cs_site_header.cs_style_1 .cs_header_main,
+    .cs_site_header.cs_style_1 .cs_header_top {
+        border: none !important;
+    }
+
+    /* ── Sticky active state ────────────────────────────────────── */
+    .cs_site_header.cs_style_1.cs_sticky_active {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border-bottom: none !important;
+    }
+
+    .cs_site_header.cs_style_1.cs_sticky_active.cs_type_2 .cs_main_header_in {
+        min-height: 48px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .cs_site_header.cs_style_1.cs_sticky_active .cs_site_brand img {
+        max-height: 80px !important;
+    }
+
+    /* ── Section title font-size fix (prevent overflow) ─────────── */
+    .cs_section_title.cs_fs_64 {
+        font-size: 28px !important;
+        line-height: 1.3em;
+    }
+
+    .cs_fs_180 {
+        font-size: 42px !important;
+        line-height: 1.1em;
+    }
+
+    /* ── Room slider hero — push content below header ───────────── */
+    .cs_single_room_slider_1 .cs_page_header.cs_style_1 {
+        padding-top: 180px !important;
+    }
+
+    /* ── Pages requiring no blur/fade behind header ──────────────── */
+    .page-transparent-header .cs_site_header.cs_style_1 {
+        background: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+    .page-transparent-header .cs_site_header.cs_style_1.cs_sticky_active {
+        background: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+    /* ── Utility to wrap long text (e.g. email) ─────────────────── */
+    .cs_break_word {
+        word-break: break-all;
+        word-wrap: break-word;
+        font-size: 32px !important; /* Scale down to fit better */
+    }
+}

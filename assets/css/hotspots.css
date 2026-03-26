@@ -1,0 +1,240 @@
+/* ============================================================
+   HERO HOTSPOT SYSTEM
+   Interactive markers overlaid on the hero aerial farm image.
+   Coordinates are in % relative to the 16:9 image container.
+   ============================================================ */
+
+/* ── Container ── */
+.cs_hotspots_container {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;          /* pass clicks through to image */
+}
+
+/* ── Individual Hotspot ── */
+.cs_hotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;          /* re-enable on each marker */
+  z-index: 6;
+  cursor: pointer;
+}
+
+/* ── Marker (outer ring + icon) ── */
+.cs_hotspot_marker {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs_hotspot_icon {
+  position: relative;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4a44a, #c4903c);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow:
+    0 2px 8px rgba(196, 144, 60, 0.45),
+    0 0 0 3px rgba(212, 164, 74, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cs_hotspot:hover .cs_hotspot_icon,
+.cs_hotspot.active .cs_hotspot_icon {
+  transform: scale(1.15);
+  box-shadow:
+    0 4px 16px rgba(196, 144, 60, 0.6),
+    0 0 0 5px rgba(212, 164, 74, 0.35);
+}
+
+/* ── Pulse Ring ── */
+.cs_hotspot_pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 164, 74, 0.6);
+  animation: hotspot-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes hotspot-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ── Tooltip Card ── */
+.cs_hotspot_tooltip {
+  position: absolute;
+  bottom: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 280px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+  z-index: 20;
+}
+
+/* Caret arrow */
+.cs_hotspot_tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #fff;
+}
+
+/* Active state */
+.cs_hotspot.active .cs_hotspot_tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Tooltip positioned LEFT ── */
+.cs_hotspot.tooltip-left .cs_hotspot_tooltip,
+.cs_hotspot.tooltip-force-left .cs_hotspot_tooltip {
+  left: auto;
+  right: calc(100% + 18px);
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+}
+
+.cs_hotspot.tooltip-left .cs_hotspot_tooltip::after,
+.cs_hotspot.tooltip-force-left .cs_hotspot_tooltip::after {
+  bottom: auto;
+  left: auto;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 9px solid #fff;
+  border-right: 9px solid transparent;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+}
+
+.cs_hotspot.tooltip-left.active .cs_hotspot_tooltip,
+.cs_hotspot.tooltip-force-left.active .cs_hotspot_tooltip {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── Tooltip Image ── */
+.cs_hotspot_tooltip_img {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.cs_hotspot_tooltip_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Tooltip Content ── */
+.cs_hotspot_tooltip_content {
+  padding: 14px 16px 16px;
+}
+
+.cs_hotspot_tooltip_content h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-family: inherit;
+}
+
+.cs_hotspot_tooltip_content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1199px) {
+  .cs_hotspot_marker {
+    width: 38px;
+    height: 38px;
+  }
+  .cs_hotspot_icon {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .cs_hotspot_tooltip {
+    width: 240px;
+  }
+  .cs_hotspot_tooltip_img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cs_hotspot_marker {
+    width: 32px;
+    height: 32px;
+  }
+  .cs_hotspot_icon {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+  .cs_hotspot_tooltip {
+    width: 220px;
+  }
+  .cs_hotspot_tooltip_img {
+    height: 100px;
+  }
+  .cs_hotspot_tooltip_content {
+    padding: 10px 12px 12px;
+  }
+  .cs_hotspot_tooltip_content h4 {
+    font-size: 14px;
+  }
+  .cs_hotspot_tooltip_content p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* On mobile, the desktop hero is hidden by the template's existing logic.
+     Hide hotspots defensively in case the hero briefly appears. */
+  .cs_hotspots_container {
+    display: none;
+  }
+}
