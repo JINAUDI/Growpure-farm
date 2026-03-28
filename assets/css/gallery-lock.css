@@ -79,3 +79,54 @@
     height: clamp(40px, 8.57vw, 120px) !important;
   }
 }
+
+/* ── Phone: stack columns vertically for proper alignment ──────────────── */
+@media (max-width: 767px) {
+  .cs_gallery_wrapper .row {
+    flex-wrap: wrap !important;
+  }
+
+  .cs_gallery_wrapper .col-lg-7 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cs_gallery_wrapper .col-lg-5 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cs_gallery_wrapper .cs_section_title.cs_fs_180 {
+    font-size: 42px !important;
+    line-height: 1.1em !important;
+    text-align: center !important;
+  }
+
+  .cs_gallery_wrapper .cs_section_subtitle.cs_fs_24 {
+    text-align: center !important;
+  }
+
+  .cs_gallery_wrapper .cs_card.cs_style_5:nth-child(1) .cs_card_thumbnail {
+    min-height: 220px !important;
+    margin-top: 20px;
+  }
+
+  .cs_gallery_wrapper .cs_card.cs_style_5:nth-child(2) {
+    margin-top: 20px !important;
+  }
+
+  .cs_gallery_wrapper .cs_card.cs_style_5:nth-child(2) .cs_card_thumbnail {
+    min-height: 180px !important;
+  }
+
+  .cs_gallery_wrapper .cs_card_text {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .cs_gallery_wrapper .cs_card_text .cs_text_btn {
+    display: block !important;
+    width: 100%;
+    text-align: center !important;
+  }
+}

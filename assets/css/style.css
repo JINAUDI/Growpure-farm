@@ -11236,9 +11236,202 @@ input[type=number]::-webkit-outer-spin-button {
     display: none !important;
   }
 }
+
 /* Hide secondary logo on mobile */
 @media (max-width: 991px) {
   .cs_secondary_logo {
     display: none !important;
+  }
+}
+
+/* Make slider arrows more visible on Our Farm page */
+.cs_slider_arrows.cs_style_2 .cs_left_arrow,
+.cs_slider_arrows.cs_style_2 .cs_right_arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  color: #fff;
+  z-index: 5;
+}
+
+.cs_slider_arrows.cs_style_2 .cs_left_arrow:hover,
+.cs_slider_arrows.cs_style_2 .cs_right_arrow:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.cs_slider_arrows.cs_style_2 .cs_left_arrow svg,
+.cs_slider_arrows.cs_style_2 .cs_right_arrow svg {
+  width: 20px;
+  height: 40px;
+  color: #fff;
+}
+
+.cs_slider_arrows.cs_style_2 .cs_left_arrow svg path,
+.cs_slider_arrows.cs_style_2 .cs_right_arrow svg path {
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+/* Earth Care section styling */
+.cs_estate_reveal_inner ul {
+  list-style: disc;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cs_estate_reveal_inner ul li {
+  margin-bottom: 5px;
+}
+
+.cs_estate_reveal_inner table {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cs_estate_reveal_inner table th {
+  font-weight: 600;
+}
+
+.cs_estate_reveal_inner h3,
+.cs_estate_reveal_inner h4 {
+  font-family: inherit;
+}
+
+/*=================================================
+  Header Layout Refactor — Premium Three-Section Layout
+  Left: Secondary logo | Center: Crest | Right: Nav + CTA
+===================================================*/
+
+/* Ensure header remains fixed for sticky scrolling while acting as context */
+/* .cs_site_header.cs_style_1 naturally uses position: fixed in the main CSS */
+
+/* Prevent overflow clipping on header containers */
+.cs_site_header.cs_style_1 .cs_header_main,
+.cs_site_header.cs_style_1 .container {
+  overflow: visible;
+}
+
+/* Ensure secondary logo always resolves against the full header bar */
+.cs_site_header.cs_style_1 .cs_header_main {
+  position: relative;
+}
+
+/* --- Secondary Logo: Anchored inside header --- */
+.cs_secondary_logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+
+.cs_secondary_logo img {
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.4s ease;
+}
+
+/* --- Sticky state: scale down logo smoothly --- */
+.cs_site_header.cs_style_1.cs_sticky_active .cs_secondary_logo img {
+  max-height: 65px;
+}
+
+/* --- Center crest: ensure perfect viewport centering --- */
+.cs_site_header.cs_style_1.cs_type_2 .cs_main_header_left {
+  max-width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 22;
+  transition: max-width 0.4s ease;
+}
+
+.cs_site_header.cs_style_1.cs_sticky_active.cs_type_2 .cs_main_header_left {
+  max-width: 100px;
+}
+
+/* --- Nav spacing: balanced around center crest --- */
+@media (min-width: 1200px) {
+  .cs_site_header.cs_style_1.cs_type_2 .cs_nav_list:first-child {
+    padding-right: 140px;
+    padding-left: 80px; /* offset for secondary logo space */
+    justify-content: flex-end;
+  }
+
+  .cs_site_header.cs_style_1.cs_type_2 .cs_nav_list:last-child {
+    padding-left: 140px;
+    justify-content: flex-start;
+  }
+}
+
+/* --- Nav links: prevent text wrapping --- */
+.cs_site_header.cs_style_1.cs_type_2 .cs_nav_list > li > a {
+  white-space: nowrap;
+}
+
+/* --- Header height transitions --- */
+.cs_site_header.cs_style_1.cs_type_2 .cs_main_header_in {
+  height: 120px;
+  transition: height 0.4s ease;
+  position: relative;
+}
+
+.cs_site_header.cs_style_1.cs_sticky_active.cs_type_2 .cs_main_header_in {
+  height: 80px;
+}
+
+/* --- Sticky background transition --- */
+.cs_site_header.cs_style_1.cs_sticky_active {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- Prevent logo clipping --- */
+.cs_site_header.cs_style_1 .cs_site_brand {
+  overflow: visible;
+}
+
+.cs_site_header.cs_style_1 .cs_site_brand img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- Smaller desktops: scale down secondary logo to avoid nav overlap --- */
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .cs_secondary_logo img {
+    max-height: 90px;
+  }
+
+  .cs_site_header.cs_style_1.cs_sticky_active .cs_secondary_logo img {
+    max-height: 55px;
+  }
+}
+
+/* --- Mobile: hide secondary logo, reset layout --- */
+@media (max-width: 1199px) {
+  .cs_secondary_logo {
+    display: none !important;
+  }
+
+  .cs_site_header.cs_style_1.cs_type_2 .cs_main_header_left {
+    position: initial;
+    transform: none;
+    max-width: 120px;
+  }
+
+  .cs_site_header.cs_style_1.cs_type_2 .cs_nav_list:first-child {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .cs_site_header.cs_style_1.cs_type_2 .cs_nav_list:last-child {
+    padding-left: 0;
   }
 }
