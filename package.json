@@ -1,0 +1,25 @@
+{
+  "name": "growpure-farm",
+  "version": "1.0.0",
+  "description": "Growpure Farm - Royal Agro Tourism Retreat",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "dev": "npx http-server -p 3000",
+    "build": "echo \"Static HTML site - no build required\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JINAUDI/Growpure-farm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JINAUDI/Growpure-farm/issues"
+  },
+  "homepage": "https://github.com/JINAUDI/Growpure-farm#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
